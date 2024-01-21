@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d83efe8e92.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bevan:ital@0;1&family=Courgette&family=Lobster&family=Pacifico&family=Rubik+Mono+One&display=swap"
+        rel="stylesheet">
+    <style>
+        i {
+            margin-right: 5px;
+        }
+
+        h1:nth-child(1) {
+            color: white;
+            font-family: 'Bevan', serif;
+            letter-spacing: -2px;
+            font-size: 4em;
+            padding: 0px;
+            margin: 15%;
+            text-align: center;
+        }
+
+        h1:nth-child(2) {
+            font-family: 'Pacifico';
+            font-size: 3em;
+            letter-spacing: -2px;
+            margin: -5em 15% 0;
+        }
+
+        #close-icon {
+            font-size: 24px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div id="menu-icon">&#9776;</div>
+        <img src="logo.png" class="mylogo">
+        <a href="#" class="logo">Portfolio.</a>
+
+        <nav class="navbar">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <img src="moon-regular-24.png" id="darkicon">
+
+    </header>
+
+
+    <script>
+        var menuIcon = document.getElementById('menu-icon');
+        var closeIcon = document.createElement('div');
+        closeIcon.id = 'close-icon';
+        closeIcon.innerHTML = '&#10006;'; // Close icon symbol (you can customize)
+
+        menuIcon.addEventListener('click', function () {
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+
+            // Toggle between menu and close icons
+            if (navbar.classList.contains('active')) {
+                menuIcon.style.display = 'none';
+                menuIcon.parentNode.insertBefore(closeIcon, menuIcon.nextSibling);
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.parentNode.removeChild(closeIcon);
+            }
+        });
+
+        // Add click event listeners to all navigation links
+        var navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                var navbar = document.querySelector('.navbar');
+                navbar.classList.remove('active');
+                menuIcon.style.display = 'block';
+                closeIcon.parentNode.removeChild(closeIcon);
+            });
+        });
+
+        closeIcon.addEventListener('click', function () {
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.parentNode.removeChild(closeIcon);
+        });
+    </script>
+
+
+
+
+    <!-- home section design -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>
+                </h11>
+                <h3>Hello, I am</h3>
+                <h1>Pankaj Sharma</h1>
+                <p>
+
+                    Hello there! I'm a passionate web developer on a journey through the captivating world of computer
+                    science. Currently pursuing my education in computer science, I find immense joy in learning and
+                    creating something new and different every day.
+                </p>
+                <p>My love for web development goes beyond the lines of code;</p>
+
+                <div class="social-media">
+
+                    <a href="https://github.com/pankaj8949"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://twitter.com/xpankaj07"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ig.pankaj__/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/pankaj-pachauri-7194972a7/"><i
+                            class="fa-brands fa-linkedin"></i></a>
+
+                </div>
+                <a href="Pankaj-Sharma.pdf" class="btn">
+                           Download CV
+                <i class="fa-solid fa-download"></i>
+                </a>
+                </div>
+
+        <div class="profession-container">
+            <div class="profession-box">
+                <div class="profession" style="--i:0;">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Web Developer</h3>
+                </div>
+                <div class="profession" style="--i:1;">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>Web Designer</h3>
+                </div>
+                <div class="profession" style="--i:2;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <h3>Error Control</h3>
+                </div>
+                <div class="profession" style="--i:3;">
+                    <i class="fa-solid fa-video"></i>
+                    <h3>Video Editor</h3>
+                </div>
+
+                <div class="circle"></div>
+            </div>
+
+            <div class="overlay"></div>
+        </div>
+
+        <div class="home-img">
+            <img src="home.png" alt="">
+        </div>
+    </section>
+
+    <!-- about section design -->
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="about.png" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>
+                Hi there, welcome to my website! I'm Pankaj, a passionate web developer who enjoys learning new
+                technologies and solving problems with code!
+            </h3>
+            <p>
+                This website is my personal blog where I write about web development
+                topics that interest me and inspire me.
+            </p>
+            <p class="additional-content" style="display: none;">
+                Thank you for visiting my website and getting to know me better. As a student, I am constantly expanding
+                my knowledge and honing my skills to stay ahead in the ever-evolving field of technology. If you have
+                any feedback or suggestions, please let me know. I'd love to hear from you.
+            </p>
+            <a href="javascript:void(0)" class="btn" onclick="toggleContent('about')">Read More</a>
+        </div>
+    </section>
+
+    <script>
+        function toggleContent(sectionId) {
+            var content = document.getElementById(sectionId).getElementsByClassName('additional-content')[0];
+            var readMoreBtn = document.getElementById(sectionId).getElementsByClassName('btn')[0];
+
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                content.style.display = 'none';
+                readMoreBtn.textContent = 'Read More';
+            }
+        }
+    </script>
+
+
+
+    <!-- services section design -->
+
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box" id="web-development">
+                <i class="fa-solid fa-code"></i>
+                <h3>Web Development</h3>
+                <p>As a web developer, I specialize in transforming your ideas into visually stunning and highly
+                    functional websites. Whether you're launching a brand, establishing an online presence
+                </p>
+                <p class="additional-content" style="display: none;">
+                    or seeking to revamp your current site, I am committed to delivering top-notch solutions tailored to
+                    your unique needs.
+                </p>
+                <a href="javascript:void(0)" class="btn" onclick="toggleContent('web-development')">Read More</a>
+            </div>
+            <div class="services-box" id="graphic-design">
+                <i class="fa-solid fa-paintbrush"></i>
+                <h3>Graphic Design</h3>
+                <p>Your website is more than just a URL – it's an extension of your brand. I take pride in creating
+                    designs that not only captivate visitors but also ensure a smooth and intuitive user experience.</p>
+                <p class="additional-content" style="display: none;">
+                    From responsive layouts to pixel-perfect detail, your website will not only look exceptional but
+                    will also function seamlessly across devices.
+                </p>
+                <a href="javascript:void(0)" class="btn" onclick="toggleContent('graphic-design')">Read More</a>
+            </div>
+            <div class="services-box" id="security-optimization">
+                <i class="fa-solid fa-chart-simple"></i>
+                <h3>Security & Optimization</h3>
+                <p>In today's digital landscape, security is paramount. I implement robust security measures to
+                    safeguard your website and its data. Additionally, I optimize every line of code
+                <p class="additional-content" style="display: none;">
+                    and every image to ensure your site loads quickly and efficiently, providing visitors with a
+                    seamless experience.</p>
+                </p>
+                <a href="javascript:void(0)" class="btn" onclick="toggleContent('security-optimization')">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleContent(serviceId) {
+            var content = document.getElementById(serviceId).getElementsByClassName('additional-content')[0];
+            var readMoreBtn = document.getElementById(serviceId).getElementsByClassName('btn')[0];
+
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                content.style.display = 'none';
+                readMoreBtn.textContent = 'Read More';
+            }
+        }
+    </script>
+
+
+
+
+    <!-- portfolio section design -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="portfolio1.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="portfolio2.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="portfolio3.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="portfolio4.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="portfolio5.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Wanna-Kiss-Me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
+                    <a href="https://pankaj8949.github.io/Wanna-Kiss-Me/"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="portfolio6.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>Guess The Number Game</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ipsam est.</p>
+                    <a href="https://pankaj8949.github.io/Guess-the-number/"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonial design -->
+    <div class="testimonial-container">
+        <h2 class="heading">Valuable <span>Testimonial</span></h2>
+
+        <div class="testimonial-wrapper">
+            <div class="testimonial-box mySwiper">
+                <div class="testimonial-content swiper-wrapper">
+                    <div class="testimonial-slide swiper-slide">
+                        <img src="testimonial1.jpg" alt="">
+                        <h3>testimonial 1</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem dignissimos aliquid
+                            iure delectus corrupti impedit, beatae aperiam ad iusto nostrum possimus cum pariatur harum
+                            assumenda suscipit a, qui, tempora maxime nulla facere quo ipsum tempore. Atque libero
+                            provident ad aut officia pariatur voluptate quaerat delectus nesciunt, sequi eligendi
+                            aperiam fugit unde nihil, iste similique illum. Dignissimos enim officia consequuntur
+                            dolores.</p>
+                    </div>
+                    <div class="testimonial-slide swiper-slide">
+                        <img src="testimonial2.jpg" alt="">
+                        <h3>testimonial 2</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem dignissimos aliquid
+                            iure delectus corrupti impedit, beatae aperiam ad iusto nostrum possimus cum pariatur harum
+                            assumenda suscipit a, qui, tempora maxime nulla facere quo ipsum tempore. Atque libero
+                            provident ad aut officia pariatur voluptate quaerat delectus nesciunt, sequi eligendi
+                            aperiam fugit unde nihil, iste similique illum. Dignissimos enim officia consequuntur
+                            dolores.</p>
+                    </div>
+                    <div class="testimonial-slide swiper-slide">
+                        <img src="testimonial3.jpg" alt="">
+                        <h3>testimonial 3</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem dignissimos aliquid
+                            iure delectus corrupti impedit, beatae aperiam ad iusto nostrum possimus cum pariatur harum
+                            assumenda suscipit a, qui, tempora maxime nulla facere quo ipsum tempore. Atque libero
+                            provident ad aut officia pariatur voluptate quaerat delectus nesciunt, sequi eligendi
+                            aperiam fugit unde nihil, iste similique illum. Dignissimos enim officia consequuntur
+                            dolores.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true, // Enable infinite loop
+        });
+    </script>
+
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <div class="input-box">
+                
+                <input type="text" placeholder="Name">
+                <input type="number" placeholder="Mobile Number">
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" class="e_mail">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message..."></textarea>
+            <input type="submit" value="Send Message" class="btn">
+
+        </form>
+
+    </section>
+
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 | All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-hand-point-up"></i></a>
+        </div>
+    </footer>
+
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+    <script>
+
+        var darkicon = document.getElementById("darkicon");
+        darkicon.onclick = function () {
+            document.body.classList.toggle("dark-theme");
+            if (document.body.classList.contains("dark-theme")) {
+                darkicon.src = "icons8-sun-50.png";
+            } else {
+                darkicon.src = "moon-regular-24.png";
+            }
+        }
+        //sticky navbar
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.querySelector(".header");
+            const navLinks = document.querySelectorAll('header nav a');
+            const sections = document.querySelectorAll('section');
+            const activeLine = document.querySelector('.active-line');
+
+            const headerOffset = header.offsetTop;
+
+            window.addEventListener("scroll", function () {
+                const scrollY = window.scrollY;
+
+                if (scrollY > headerOffset) {
+                    header.classList.add("sticky");
+
+                    // Highlight the sticky navigation links
+                    navLinks.forEach(link => {
+                        link.classList.add('sticky-link');
+                    });
+                } else {
+                    header.classList.remove("sticky");
+
+                    navLinks.forEach(link => {
+                        link.classList.remove('sticky-link');
+                    });
+                }
+
+                // Highlight the active link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                sections.forEach(sec => {
+                    let top = window.scrollY;
+                    let offset = sec.offsetTop - 150;
+                    let height = sec.offsetHeight;
+                    let id = sec.getAttribute('id');
+
+                    if (top >= offset && top < offset + height) {
+                        const activeLink = document.querySelector('header nav a[href="#' + id + '"]');
+                        activeLink.classList.add('active');
+
+                        // Update the line under the active link
+                        if (activeLine) {
+                            activeLine.style.width = activeLink.offsetWidth + 'px';
+                            activeLine.style.left = activeLink.offsetLeft + 'px';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+</body>
+
+</html>
